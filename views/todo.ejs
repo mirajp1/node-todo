@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+    <head>
+        <title>Todo</title>
+        <script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+  <link href="/assets/styles.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src='/assets/todo-list.js'></script>
+    </head>
+
+    <body>
+        <h1>Todo List</h1>
+        <div id='todo-table'>
+
+            <form id='todo-form' action='/todo' method='post'>
+                <input type='text' name="item"  placeholder="Add new todo note.." required/>
+                <button type="submit">Add</button>
+            </form>
+
+            <ul>
+                <% items.forEach(function(todoItem){ %>
+                    <li><%= todoItem.item %></li>
+                <% }); %>
+
+            </ul>
+        </div>
+    </body>
+
+</html>
