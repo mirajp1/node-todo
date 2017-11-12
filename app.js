@@ -1,4 +1,5 @@
 var express= require('express');
+var config = require('./config');
 var todoController = require('./controllers/todoController');
 var app = express();
 
@@ -12,5 +13,5 @@ app.use(express.static('./public'));
 todoController(app);
 
 //listen to a port
-app.listen(4500);
+app.listen(config['development']['server'].port);
 console.log('started the server. listening at port 4500');
